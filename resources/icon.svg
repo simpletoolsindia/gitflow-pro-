@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff"/>
+      <stop offset="100%" style="stop-color:#7b2cbf"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f5d4"/>
+      <stop offset="100%" style="stop-color:#00bbf9"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b5de5"/>
+      <stop offset="100%" style="stop-color:#f15bb5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="url(#bgGrad)"/>
+
+  <!-- Git branch icon - stylized -->
+  <g transform="translate(64, 64)">
+    <!-- Main stem -->
+    <path d="M0,-35 L0,20" stroke="url(#accentGrad)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Left branch (coming in) -->
+    <path d="M0,-10 C-20,-10 -25,10 -35,25" stroke="url(#greenGrad)" stroke-width="5" stroke-linecap="round" fill="none">
+      <animate attributeName="stroke-dasharray" from="0,100" to="100,0" dur="1s" fill="freeze"/>
+    </path>
+
+    <!-- Right branch (going out) -->
+    <path d="M0,5 C15,5 25,-5 35,-20" stroke="url(#purpleGrad)" stroke-width="5" stroke-linecap="round" fill="none">
+      <animate attributeName="stroke-dasharray" from="0,100" to="100,0" dur="1s" fill="freeze"/>
+    </path>
+
+    <!-- Merge/flow dots -->
+    <circle cx="0" cy="-35" r="6" fill="#00d9ff">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-35" cy="25" r="5" fill="#00f5d4">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="35" cy="-20" r="5" fill="#f15bb5">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+
+    <!-- Central node -->
+    <circle cx="0" cy="0" r="8" fill="white" opacity="0.9">
+      <animate attributeName="r" values="8;10;8" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- "Pro" badge -->
+  <rect x="82" y="8" width="32" height="16" rx="8" fill="url(#accentGrad)"/>
+  <text x="98" y="19" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">PRO</text>
+</svg>

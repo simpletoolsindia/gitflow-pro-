@@ -1,0 +1,349 @@
+{
+  "name": "gitflow-pro",
+  "displayName": "GitFlow Pro",
+  "description": "A modern VS Code extension for easy Git operations, merge conflict resolution, and real-time code quality checks.",
+  "version": "1.0.0",
+  "publisher": "simpletools",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:gitflowPro.refresh",
+    "onView:gitflow-pro-sidebar"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitflowPro.refresh",
+        "title": "Refresh Repository",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.stageFile",
+        "title": "Save Change for Commit (Stage)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.unstageFile",
+        "title": "Remove from Commit (Unstage)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.stageAll",
+        "title": "Save All Changes for Commit (Stage All)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.unstageAll",
+        "title": "Remove All from Commit (Unstage All)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.discardChanges",
+        "title": "Discard Changes",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.commit",
+        "title": "Save Version (Commit)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.amendCommit",
+        "title": "Update Last Save (Amend)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.push",
+        "title": "Send My Code (Push)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.pull",
+        "title": "Get Latest Code (Pull)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.fetch",
+        "title": "Check for Updates (Fetch)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.switchBranch",
+        "title": "Change Branch (Switch)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.createBranch",
+        "title": "Create New Branch",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.mergeBranch",
+        "title": "Combine Branches (Merge)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.stash",
+        "title": "Keep Work Aside (Stash)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.stashPop",
+        "title": "Restore Stashed Work (Stash Pop)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.initRepo",
+        "title": "Start Git Tracking (Init)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.viewDiff",
+        "title": "View Changes (Diff)",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.resolveConflict",
+        "title": "Resolve Conflict",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.resolveConflictKeepMine",
+        "title": "Keep My Code",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.resolveConflictKeepOther",
+        "title": "Use Other Person's Code",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.openSettings",
+        "title": "Open Extension Settings",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.checkCurrentFile",
+        "title": "Check Current File for Issues",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.checkWorkspace",
+        "title": "Check Workspace for Issues",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.autoFixIssues",
+        "title": "Auto Fix Issues",
+        "category": "Simple Git"
+      },
+      {
+        "command": "gitflowPro.fixIssue",
+        "title": "Fix Specific Issue",
+        "category": "Simple Git"
+      }
+    ],
+    "viewsContainers": {
+      "sidebar": {
+        "id": "gitflow-pro-sidebar",
+        "title": "GitFlow Pro",
+        "icon": "resources/icon.svg"
+      }
+    },
+    "views": {
+      "gitflow-pro-sidebar": [
+        {
+          "id": "gitflow-pro-main",
+          "name": "Git Status"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "gitflowPro.refresh",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.stageFile",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.unstageFile",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.stageAll",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.unstageAll",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.discardChanges",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.commit",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.push",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.pull",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.fetch",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.switchBranch",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.createBranch",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.mergeBranch",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.stash",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.stashPop",
+          "when": "gitflowPro:hasRepo"
+        },
+        {
+          "command": "gitflowPro.initRepo",
+          "when": "!gitflowPro:hasRepo"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "gitflowPro.stageFile",
+          "group": "navigation"
+        },
+        {
+          "command": "gitflowPro.discardChanges",
+          "group": "navigation"
+        }
+      ],
+      "scm/title": [
+        {
+          "command": "gitflowPro.refresh",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Simple Git Conflict Helper",
+      "properties": {
+        "gitflowPro.useRebase": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use rebase instead of merge when pulling changes"
+        },
+        "gitflowPro.showBeginnerHelp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show beginner-friendly help text for Git actions"
+        },
+        "gitflowPro.autoResolveSimple": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically resolve simple conflicts"
+        },
+        "gitflowPro.autoCodeCheck": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically check code for issues on save"
+        },
+        "gitflowPro.enableShortcuts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable keyboard shortcuts for Git actions"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "gitflowPro.stageAll",
+        "key": "ctrl+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.commit",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.push",
+        "key": "ctrl+shift+u",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.pull",
+        "key": "ctrl+shift+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.fetch",
+        "key": "ctrl+shift+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.stash",
+        "key": "ctrl+shift+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.discardChanges",
+        "key": "ctrl+shift+delete",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.switchBranch",
+        "key": "ctrl+shift+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.viewDiff",
+        "key": "ctrl+shift+v",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gitflowPro.amendCommit",
+        "key": "ctrl+shift+a",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.75.0",
+    "@vscode/test-electron": "^2.3.0",
+    "@vscode/vsce": "^2.21.0",
+    "typescript": "^5.3.0"
+  }
+}
